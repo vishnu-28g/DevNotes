@@ -1,6 +1,5 @@
 
-const API_BASE_URL = "http://127.0.0.1:8000";
-
+const API_BASE_URL = "https://devnotes-z4rg.onrender.com";
 const TOKEN_KEY = "devnotes_access_token";
 
 // Keep the token for the current browser tab/session.
