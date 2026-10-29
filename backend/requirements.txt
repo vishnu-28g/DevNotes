@@ -3,3 +3,5 @@ fastapi
 uvicorn[standard]
 mysql-connector-python
 python-dotenv
+python-jose[cryptography]
+pwdlib[argon2]
