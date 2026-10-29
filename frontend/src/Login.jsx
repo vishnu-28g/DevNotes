@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { loginUser, registerUser } from "./api";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
-
+const API_BASE_URL = "https://devnotes-z4rg.onrender.com";
 export default function Login({ onLogin }) {
   const [mode, setMode] = useState("login");
   const [name, setName] = useState("");
@@ -76,13 +75,14 @@ export default function Login({ onLogin }) {
         });
       }
 
-      if (!result.access_token || !result.user) {
-        throw new Error(
-          "The server returned an incomplete login response."
-        );
-      }
+     if (!result.access_token || !result.user) {
+  throw new Error(
+    "The server returned an incomplete login response."
+  );
+}
 
-      onLogin(result.user);
+localStorage.setItem("token", result.access_token);
+onLogin(result.user);
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
